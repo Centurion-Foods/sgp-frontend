@@ -1,0 +1,30 @@
+export const COLUMNAS_PRODUCTOS_BASE = [
+  { llave: "id", etiqueta: "ID" },
+  { llave: "codigo", etiqueta: "Código" },
+  { llave: "nombre", etiqueta: "Nombre del Producto" },
+  { llave: "um", etiqueta: "U.M" },
+  { llave: "area", etiqueta: "Área" },
+];
+
+export const registrosProductosEjemplo = [
+    { id: 1, codigo: "110052", nombre: "AZUL X KG", um: "KG", area: "Azul", total: 2789 },
+    { id: 2, codigo: "110053", nombre: "AZUL 100 G X UND", um: "UND", area: "Azul", total: 3456 },
+    { id: 3, codigo: "110255", nombre: "AZUL CUÑA 250 G X UND", um: "UND", area: "Azul", total: 4123 },
+    { id: 4, codigo: "90020", nombre: "BOLITAS DE CHORIZO", um: "UND", area: "Normalización", total: 1987 },
+    { id: 5, codigo: "110026", nombre: "BRIE 125 G X UND", um: "UND", area: "Normalización", total: 2789 },
+    { id: 6, codigo: "110234", nombre: "BRIETTE DULCE DE LECHE 125G", um: "UND", area: "Normalización", total: 3456 },
+    { id: 7, codigo: "110235", nombre: "BRIETTE SMOKY 125 X UND", um: "UND", area: "Normalización", total: 4123 },
+    { id: 8, stroke: "110241", nombre: "BRIETTE CREAMY AND BLUE", um: "UND", area: "Normalización", total: 1987 },
+    { id: 9, codigo: "110242", nombre: "BRIETTE CREAMY AND BUTTERY RED", um: "UND", area: "Normalización", total: 2789 },
+    { id: 10, codigo: "110243", nombre: "BRIETTE CREAMY AND MILD", um: "UND", area: "Normalización", total: 3456 },
+    { id: 11, codigo: "110406", nombre: "BRIETTE CREAMY AND MILD 125G - CAJA X 12 UND", um: "CAJA", area: "Normalización", total: 4123 },
+    { id: 12, codigo: "10006", nombre: "CHEDDAR 160 TAJ VERTICAL X KG", um: "KG", area: "Normalización", total: 1987 },
+    { id: 13, codigo: "10012", nombre: "CHEDDAR FUNDIDO CENTURION 100 G X UND", um: "UND", area: "Tajado", total: 2789 },
+    { id: 14, codigo: "10014", nombre: "CHEDDAR ANALOGO BLOQUE X KG", um: "KG", area: "Porcionado", total: 3456 },
+    { id: 15, codigo: "10014", nombre: "CHEDDAR ANALOGO BLOQUE X KG", um: "KG", area: "Porcionado", total: 4123 },
+    { id: 16, codigo: "10014", nombre: "CHEDDAR ANALOGO BLOQUE X KG", um: "KG", area: "Porcionado", total: 1987 },
+    { id: 17, codigo: "10014", nombre: "CHEDDAR ANALOGO BLOQUE X KG", um: "KG", area: "Porcionado", total: 2789 },
+    { id: 18, codigo: "10014", nombre: "CHEDDAR ANALOGO BLOQUE X KG", um: "KG", area: "Porcionado", total: 4123 },
+    { id: 19, codigo: "10014", nombre: "CHEDDAR ANALOGO BLOQUE X KG", um: "KG", area: "Porcionado", total: 1987 },
+    { id: 20, codigo: "10014", nombre: "CHEDDAR ANALOGO BLOQUE X KG", um: "KG", area: "Porcionado", total: 2789 },
+];

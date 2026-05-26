@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@layer utilities {
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent; 
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+
+  /* Soporte para Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
+  }
+}
+
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+.form-group {
+  margin-bottom: 0.1rem;
+  border: 2px solid #d1d5db;
+  padding: 0.8rem;
+  border-radius: 0.375rem;
+  width: 16rem;
+  height: 2.8rem;
+  outline: none;
+}
+
+.miniblobrojo {
+  position: fixed;
+  bottom: -255px;
+  left: -225px;
+  width: 510px;
+  height: 510px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.blobblanco {
+  position: fixed;
+  bottom: -325px;
+  left: -295px;
+  width: 650px;
+  height: 650px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.blobrojo {
+  position: fixed;
+  bottom: -400px;
+  left: -360px;
+  width: 800px;
+  height: 800px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.vector {
+  position: fixed;
+  top: -64px;
+  right: 0px;
+  width: 900px;
+  height: 900px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.logo {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
