@@ -80,7 +80,7 @@ sgp-frontend/
         └── shared/ui/               # Componentes reutilizables (Card, Tab, TabsContainer)
 ```
 
-> Ver documentación detallada en [`docs/estructura.md`](./docs/estructura.md)
+> Ver documentación detallada en [`frontend/docs/estructura.md`](.frontend/docs/estructura.md)
 
 ---
 
