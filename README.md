@@ -80,7 +80,7 @@ sgp-frontend/
         └── shared/ui/               # Componentes reutilizables (Card, Tab, TabsContainer)
 ```
 
-> Ver documentación detallada en [`frontend/docs/estructura.md`](.frontend/docs/estructura.md)
+> Ver documentación detallada en [`frontend/docs/estructura.md`](./frontend/docs/estructura.md)
 
 ---
 
@@ -128,7 +128,7 @@ La aplicación define cinco roles con vistas y permisos diferenciados. La protec
 | **Gerente** | Accede al dashboard ejecutivo con KPIs, gráficas comparativas y tendencias. Vista de solo lectura. |
 | **Director de Producción** | Acceso total. Asigna y reasigna lugares de trabajo a supervisores y supervisa todos los módulos. |
 
-> Ver detalle de rutas y permisos en [`docs/rutas-y-roles.md`](./docs/rutas-y-roles.md)
+> Ver detalle de rutas y permisos en [`frontend/docs/rutas-y-roles.md`](./frontend/docs/rutas-y-roles.md)
 
 ---
 
@@ -167,7 +167,7 @@ Los endpoints planeados son:
 | Listado de supervisores | `/api/supervisores` | `GET` |
 | Lugares de trabajo | `/api/lugares-trabajo` | `GET` |
 
-> Ver documentación completa en [`docs/integracion-backend.md`](./docs/integracion-backend.md)
+> Ver documentación completa en [`frontend/docs/integracion-backend.md`](./frontend/docs/integracion-backend.md)
 
 ---
 
@@ -191,9 +191,9 @@ Los endpoints planeados son:
 
 | Documento | Descripción |
 |---|---|
-| [`docs/estructura.md`](./docs/estructura.md) | Estructura de carpetas explicada |
-| [`docs/rutas-y-roles.md`](./docs/rutas-y-roles.md) | Mapa de rutas y permisos por rol |
-| [`docs/integracion-backend.md`](./docs/integracion-backend.md) | Puntos de integración con la API |
+| [`frontend/docs/estructura.md`](./frontend/docs/estructura.md) | Estructura de carpetas explicada |
+| [`frontend/docs/rutas-y-roles.md`](./frontend/docs/rutas-y-roles.md) | Mapa de rutas y permisos por rol |
+| [`frontend/docs/integracion-backend.md`](./frontend/docs/integracion-backend.md) | Puntos de integración con la API |
 | [`CONTRIBUTING.md`](./CONTRIBUTING.md) | Cómo contribuir al proyecto |
 | [`CHANGELOG.md`](./CHANGELOG.md) | Historial de cambios |
 
