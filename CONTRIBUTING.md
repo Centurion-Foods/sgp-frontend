@@ -167,4 +167,8 @@ git pull origin develop
 
 # Ver ramas disponibles
 git branch -a
+<<<<<<< HEAD
 ``` 
+=======
+```
+>>>>>>> 824a5e0d4cce307f3be623e3389d23502d1eb27d

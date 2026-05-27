@@ -45,4 +45,8 @@ Cada vez que se mergea algo relevante a `develop` o `main`, agregar la entrada c
 | `Cambiado` | Cambio en funcionalidad existente |
 | `Corregido` | Bug corregido |
 | `Eliminado` | Funcionalidad removida |
+<<<<<<< HEAD
 | `Deprecado` | Funcionalidad que será removida próximamente |
+=======
+| `Deprecado` | Funcionalidad que será removida próximamente |
+>>>>>>> 824a5e0d4cce307f3be623e3389d23502d1eb27d
