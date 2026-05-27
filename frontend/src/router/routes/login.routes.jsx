@@ -1,4 +1,4 @@
-import Login from "../../features/vistas/login/components/login";
+import Login from "../../pages/login/components/login";
 
 const loginRoutes = {
   path: "/login",

@@ -1,9 +1,9 @@
-import DirectorLayout from "../../features/vistas/director/DirectorLayout"
-import Dashboard from "../../features/vistas/gerencia/components/pages/Dashboard"
-import DatosHistoricos from "../../features/vistas/gerencia/components/pages/DatosHistoricos"
-import AsignacionSupervisores from "../../features/vistas/director/components/pages/AsignaciónSupervisores"
-import RegistrodeParadas from "../../features/vistas/director/components/pages/RegistrodeParadas"
-import RegistroProductos from "../../features/vistas/director/components/pages/RegistroProductos"
+import DirectorLayout from "../../pages/director/DirectorLayout"
+import Dashboard from "../../pages/gerencia/components/pages/Dashboard"
+import DatosHistoricos from "../../pages/gerencia/components/pages/DatosHistoricos"
+import AsignacionSupervisores from "../../pages/director/components/pages/AsignaciónSupervisores"
+import RegistrodeParadas from "../../pages/director/components/pages/RegistrodeParadas"
+import RegistroProductos from "../../pages/director/components/pages/RegistroProductos"
 
 const directorRoutes = {
   path: "/director",

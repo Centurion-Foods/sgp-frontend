@@ -1,7 +1,7 @@
-import AdminLayout from "../../features/vistas/admin/components/AdminLayout"
-import UsuariosPage from "../../features/vistas/admin/components/pages/usuarios/UsuariosPage"
-import RolesPage from "../../features/vistas/admin/components/pages/roles/RolesPage"
-import Permisos from "../../features/vistas/admin/components/pages/permisos/PermisosPage"
+import AdminLayout from "../../pages/admin/components/AdminLayout"
+import UsuariosPage from "../../pages/admin/components/pages/usuarios/UsuariosPage"
+import RolesPage from "../../pages/admin/components/pages/roles/RolesPage"
+import Permisos from "../../pages/admin/components/pages/permisos/PermisosPage"
 
 const adminRoutes = {
     path: "/admin",

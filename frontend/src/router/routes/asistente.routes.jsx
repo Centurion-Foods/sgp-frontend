@@ -1,7 +1,7 @@
-import Layout          from "../../features/vistas/asistente/AsistenteLayout"
-import Registros        from "../../features/vistas/supervisor/components/pages/RegistroTurnos"
-import DatosHistoricos  from "../../features/vistas/gerencia/components/pages/DatosHistoricos"
-import RegistrodeParadas from "../../features/vistas/director/components/pages/RegistrodeParadas"
+import Layout          from "../../pages/asistente/AsistenteLayout"
+import Registros        from "../../pages/supervisor/components/pages/RegistroTurnos"
+import DatosHistoricos  from "../../pages/gerencia/components/pages/DatosHistoricos"
+import RegistrodeParadas from "../../pages/director/components/pages/RegistrodeParadas"
 
 const asistenteRoutes = {
     path: "/asistente",

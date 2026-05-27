@@ -1,6 +1,6 @@
-import Layout from "../../features/vistas/gerencia/components/GerenciaLayout"
-import Dashboard from "../../features/vistas/gerencia/components/pages/Dashboard"
-import DatosHistoricos from "../../features/vistas/gerencia/components/pages/DatosHistoricos"
+import Layout from "../../pages/gerencia/components/GerenciaLayout"
+import Dashboard from "../../pages/gerencia/components/pages/Dashboard"
+import DatosHistoricos from "../../pages/gerencia/components/pages/DatosHistoricos"
 
 const gerenciaRoutes = {
     path: "/gerencia",

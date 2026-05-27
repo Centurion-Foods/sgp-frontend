@@ -38,10 +38,10 @@ La aplicación está construida como una **SPA (Single Page Application)** con R
 
 Antes de esta solución, la operación enfrentaba los siguientes desafíos:
 
-- 📊 Registro de producción **manual y disperso** en archivos Excel por área.
-- 👁️ **Sin visibilidad consolidada** para la gerencia sobre indicadores de producción.
-- 🔀 Proceso **manual e ineficiente** para que el Director asigne supervisores a los puestos de trabajo.
-- 🔗 **Ausencia de un sistema centralizado** que integre todos los roles del proceso productivo.
+- Registro de producción manual y disperso en archivos Excel por área.
+- Sin visibilidad consolidada para la gerencia sobre indicadores de producción.
+- Proceso manual e ineficiente para que el Director asigne supervisores a los puestos de trabajo.
+- Ausencia de un sistema centralizado que integre todos los roles del proceso productivo.
 
 ---
 
@@ -62,29 +62,25 @@ Antes de esta solución, la operación enfrentaba los siguientes desafíos:
 ```
 sgp-frontend/
 └── frontend/
+    ├── docs/                        # Documentación técnica del proyecto
     ├── public/
     └── src/
-        ├── assets/                   # Imágenes, iconos y fuentes
-        ├── auth/                     # Contextos, lógica y hooks de autenticación + Route Guards
-        ├── data/                     # Datos mock estáticos (temporal hasta integración con backend)
-        ├── pages/                    # Vistas principales organizadas por rol
-        │   ├── admin/                # Panel administrativo
-        │   ├── asistente/            # Módulo Asistente de Producción
-        │   ├── director/             # Panel Director de Producción
-        │   ├── gerencia/             # Dashboard Gerencial
-        │   ├── login/                # Pantalla de inicio de sesión
-        │   ├── supervisor/           # Módulo Supervisor de Producción
+        ├── assets/                  # Imágenes, iconos y fuentes
+        ├── auth/                    # Contextos, lógica y hooks de autenticación + Route Guards
+        ├── data/                    # Datos mock estáticos (temporal hasta integración con backend)
+        ├── pages/                   # Vistas principales organizadas por rol
+        │   ├── asistente/           # Módulo Asistente de Producción
+        │   ├── director/            # Módulo Director de Producción
+        │   ├── gerencia/            # Dashboard Gerencial
+        │   ├── login/               # Pantalla de inicio de sesión
+        │   ├── supervisor/          # Módulo Supervisor de Producción
         │   └── supervisor_planeacion/ # Módulo Supervisor de Planeación
-        ├── router/                   # Configuración de rutas con React Router
-        ├── services/                 # [PENDIENTE] Llamadas a la API REST
-        ├── shared/
-        │   └── ui/                   # Componentes reutilizables (Card, Tab, TabsContainer)
-        ├── App.jsx                   # Componente raíz
-        ├── main.jsx                  # Punto de entrada
-        └── index.css                 # Estilos globales
+        ├── router/                  # Configuración de rutas con React Router
+        ├── services/                # [Pendiente] Llamadas a la API REST
+        └── shared/ui/               # Componentes reutilizables (Card, Tab, TabsContainer)
 ```
 
-> 📄 Ver documentación detallada en [`docs/estructura.md`](./docs/estructura.md)
+> Ver documentación detallada en [`docs/estructura.md`](./docs/estructura.md)
 
 ---
 
@@ -122,42 +118,42 @@ npm run build
 
 ## 👥 Roles y accesos
 
-La aplicación define **cinco roles** con vistas y permisos diferenciados. La protección de rutas está gestionada mediante Route Guards dentro de la carpeta `auth/`.
+La aplicación define cinco roles con vistas y permisos diferenciados. La protección de rutas está gestionada mediante Route Guards en `src/auth/Guards.jsx`.
 
 | Rol | Accesos y responsabilidades |
 |---|---|
 | **Asistente de Producción** | Registra la producción diaria por turno: línea, producto y unidades producidas. Consulta su historial de registros. |
 | **Supervisor de Producción** | Monitorea los asistentes a su cargo, valida o rechaza registros de producción y reporta incidencias. Tiene un lugar de trabajo asignado por el Director. |
 | **Supervisor de Planeación** | Ingresa las órdenes de producción que guían el trabajo de los asistentes. Rol independiente al Supervisor de Producción. |
-| **Gerente** | Accede al dashboard ejecutivo con KPIs, gráficas comparativas y tendencias. Vista principalmente de solo lectura. |
-| **Director de Producción** | Acceso total. Asigna y reasigna lugares de trabajo a supervisores, supervisa todos los módulos y puede modificar registros en casos excepcionales. |
+| **Gerente** | Accede al dashboard ejecutivo con KPIs, gráficas comparativas y tendencias. Vista de solo lectura. |
+| **Director de Producción** | Acceso total. Asigna y reasigna lugares de trabajo a supervisores y supervisa todos los módulos. |
 
-> 📄 Ver detalle de rutas y permisos en [`docs/rutas-y-roles.md`](./docs/rutas-y-roles.md)
+> Ver detalle de rutas y permisos en [`docs/rutas-y-roles.md`](./docs/rutas-y-roles.md)
 
 ---
 
 ## 🧩 Módulos de la aplicación
 
-### 📋 Supervisor de Planeación — Órdenes de producción
-Permite ingresar las órdenes de producción que definen qué se debe producir, en qué línea y en qué cantidad. Es el punto de partida del flujo productivo.
+### Supervisor de Planeación — Órdenes de producción
+Permite ingresar las órdenes de producción que definen qué se debe producir, en qué línea y en qué cantidad. Es el punto de partida del flujo productivo. **[En desarrollo]**
 
-### 📝 Asistente — Registro de producción
+### Asistente — Registro de producción
 Permite ingresar los datos de producción por turno: línea, producto, unidades producidas y observaciones. Los registros quedan disponibles para validación del Supervisor de Producción.
 
-### 🔎 Supervisor de Producción — Panel de supervisión
+### Supervisor de Producción — Panel de supervisión
 Visualiza el avance de los asistentes asignados a su cargo. Permite aprobar o rechazar registros y reportar incidencias con impacto estimado.
 
-### 📊 Gerente — Dashboard ejecutivo
-Dashboard con KPIs de producción: totales por día/semana/mes, comparativas por línea y turno, y cumplimiento de metas. Gráficos interactivos con filtros por período y área.
+### Gerente — Dashboard ejecutivo
+Dashboard con KPIs de producción: totales por día, semana y mes, comparativas por línea y turno, y cumplimiento de metas. Gráficos interactivos con filtros por período y área.
 
-### ⚙️ Director — Panel administrativo
-Acceso global a todos los módulos. Incluye el módulo de **Asignación de Supervisores**: asignar o reasignar a cada supervisor un lugar de trabajo activo con confirmación inmediata.
+### Director — Panel administrativo
+Acceso global a todos los módulos. Incluye el módulo de asignación de supervisores: asignar o reasignar a cada supervisor un lugar de trabajo activo con confirmación inmediata.
 
 ---
 
 ## 🔌 Integración con Backend
 
-La carpeta `src/services/` está reservada para conectarse a una **API REST** en una versión futura. Actualmente, los datos de desarrollo se sirven desde `src/data/` como datos mock estáticos.
+La carpeta `src/services/` está reservada para conectarse a una API REST en una versión futura. Actualmente los datos de desarrollo se sirven desde `src/data/` como datos mock estáticos.
 
 Los endpoints planeados son:
 
@@ -171,7 +167,7 @@ Los endpoints planeados son:
 | Listado de supervisores | `/api/supervisores` | `GET` |
 | Lugares de trabajo | `/api/lugares-trabajo` | `GET` |
 
-> 📄 Ver documentación completa en [`docs/integracion-backend.md`](./docs/integracion-backend.md)
+> Ver documentación completa en [`docs/integracion-backend.md`](./docs/integracion-backend.md)
 
 ---
 
@@ -183,7 +179,7 @@ Los endpoints planeados son:
 | ✅ | Vistas diferenciadas por los 5 roles | Incluido en v1.0 |
 | ✅ | Dashboard de producción (UI) | Incluido en v1.0 |
 | ✅ | Módulo de asignación de lugares de trabajo (UI) | Incluido en v1.0 |
-| ✅ | Módulo de ingreso de órdenes de producción (UI) | Incluido en v1.0 |
+| ⏳ | Módulo Supervisor de Planeación | En desarrollo |
 | ⏳ | Backend y API REST | Versión futura |
 | ⏳ | Base de datos y persistencia | Versión futura |
 | ⏳ | Autenticación y autorización real | Versión futura |
@@ -195,7 +191,6 @@ Los endpoints planeados son:
 
 | Documento | Descripción |
 |---|---|
-| [`docs/arquitectura.md`](./docs/arquitectura.md) | Diagrama y decisiones de arquitectura |
 | [`docs/estructura.md`](./docs/estructura.md) | Estructura de carpetas explicada |
 | [`docs/rutas-y-roles.md`](./docs/rutas-y-roles.md) | Mapa de rutas y permisos por rol |
 | [`docs/integracion-backend.md`](./docs/integracion-backend.md) | Puntos de integración con la API |
@@ -206,9 +201,9 @@ Los endpoints planeados son:
 
 ## 🤝 Contribuir al proyecto
 
-Para contribuir, por favor lee primero [`CONTRIBUTING.md`](./CONTRIBUTING.md) donde se detallan las convenciones de ramas, commits y pull requests del equipo.
+Para contribuir, por favor lee primero [`CONTRIBUTING.md`](./CONTRIBUTING.md) donde se detallan las convenciones de ramas, commits y pull requests del proyecto.
 
 ---
 
-> 🔒 **CONFIDENCIAL — USO INTERNO**
+> **CONFIDENCIAL — USO INTERNO**
 > Este proyecto es propiedad de Centurion Foods. No compartir fuera de los canales autorizados.

@@ -1,7 +1,7 @@
-import Layout          from "../../features/vistas/supervisor/SupervisorLayout"
-import GestionProductos from "../../features/vistas/director/components/pages/RegistroProductos"
-import Registros        from "../../features/vistas/supervisor/components/pages/RegistroTurnos"
-import DatosHistoricos  from "../../features/vistas/gerencia/components/pages/DatosHistoricos"
+import Layout          from "../../pages/supervisor/SupervisorLayout"
+import GestionProductos from "../../pages/director/components/pages/RegistroProductos"
+import Registros        from "../../pages/supervisor/components/pages/RegistroTurnos"
+import DatosHistoricos  from "../../pages/gerencia/components/pages/DatosHistoricos"
 
 const supervisorRoutes = {
   path: "/supervisor",
