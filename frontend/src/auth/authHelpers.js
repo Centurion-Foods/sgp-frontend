@@ -10,6 +10,7 @@ export const ROLE_HOME = {
   director: "/director",
   supervisor: "/supervisor",
   asistente: "/asistente",
+  supervisorplaneacion: "/supervisorplaneacion"
 }
 
 export function getRoleHome(role) {

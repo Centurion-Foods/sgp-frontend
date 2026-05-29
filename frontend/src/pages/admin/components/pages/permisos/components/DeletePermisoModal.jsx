@@ -1,54 +1,28 @@
-import { AlertTriangle, X } from "lucide-react"
+import { AlertTriangle } from "lucide-react"
+import Modal from "../../../../../../shared/ui/Modal"
 
-export default function DeletePermisoModal({ permiso, onClose, onConfirm }) {
-  if (!permiso) return null
-
+export default function DeletePermisoModal({ isOpen, permiso, onClose, onConfirm }) {
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm">
-      <div className="bg-white rounded-2xl shadow-xl w-full max-w-sm mx-4 animate-fade-in">
-        <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100">
-          <div className="flex items-center gap-2 text-red-700">
-            <AlertTriangle className="w-5 h-5" />
-            <h2 className="text-lg font-semibold">Eliminar permiso</h2>
-          </div>
-          <button
-            onClick={onClose}
-            className="p-1.5 text-gray-400 hover:text-gray-700 hover:bg-gray-100 rounded-lg transition-all"
-          >
-            <X className="w-5 h-5" />
-          </button>
-        </div>
-
-        <div className="px-6 py-5">
+    <Modal isOpen={isOpen} onClose={onClose} title="Eliminar permiso">
+      <div className="space-y-4">
+        <div className="flex items-start gap-3">
+          <AlertTriangle className="w-5 h-5 text-red-700 shrink-0 mt-0.5" />
           <p className="text-sm text-gray-600">
             ¿Estás seguro de que deseas eliminar el permiso{" "}
-            <span className="font-semibold text-gray-900">{permiso.permiso}</span>?
+            <span className="font-semibold text-gray-900">{permiso?.permiso}</span>?
             Esta acción no se puede deshacer.
           </p>
-          {permiso.roles.length > 0 && (
-            <div className="mt-4 bg-red-50 border border-red-100 rounded-xl px-4 py-3 text-sm text-red-700">
-              Está asociado a{" "}
-              <span className="font-semibold">{permiso.roles.length} rol(es)</span>:{" "}
-              {permiso.roles.join(", ")}.
-            </div>
-          )}
         </div>
-
-        <div className="flex justify-end gap-3 px-6 py-4 border-t border-gray-100">
-          <button
-            onClick={onClose}
-            className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-xl transition-all"
-          >
-            Cancelar
-          </button>
-          <button
-            onClick={() => onConfirm(permiso.id)}
-            className="px-5 py-2 text-sm font-medium bg-red-700 hover:bg-red-800 text-white rounded-xl transition-all shadow-sm"
-          >
-            Sí, eliminar
-          </button>
-        </div>
+        {permiso?.roles.length > 0 && (
+          <div className="bg-red-50 border border-red-100 rounded-xl px-4 py-3 text-sm text-red-700">
+            Está asociado a <span className="font-semibold">{permiso.roles.length} rol(es)</span>: {permiso.roles.join(", ")}.
+          </div>
+        )}
       </div>
-    </div>
+      <div className="flex justify-end gap-3 pt-4 border-t border-gray-100 mt-4">
+        <button onClick={onClose} className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-xl transition-all">Cancelar</button>
+        <button onClick={() => onConfirm(permiso?.id)} className="px-5 py-2 text-sm font-medium bg-red-700 hover:bg-red-800 text-white rounded-xl transition-all shadow-sm">Sí, eliminar</button>
+      </div>
+    </Modal>
   )
 }

@@ -1,5 +1,5 @@
-import AdminLayout from "../../pages/admin/components/AdminLayout"
-import UsuariosPage from "../../pages/admin/components/pages/usuarios/UsuariosPage"
+import AdminLayout from "../../pages/admin/AdminLayout"
+import UsuariosPage from "../../pages/admin/components/pages/user/UsuariosPage"
 import RolesPage from "../../pages/admin/components/pages/roles/RolesPage"
 import Permisos from "../../pages/admin/components/pages/permisos/PermisosPage"
 

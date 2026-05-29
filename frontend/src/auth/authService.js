@@ -22,7 +22,8 @@ const MOCK_USERS = [
   { id: 2, name: "Gerente",   email: "gerencia@centurionfoods.com", password: "gerencia123", role: "gerencia" },
   { id: 3, name: "Director",  email: "director@centurionfoods.com", password: "director123", role: "director" },
   { id: 4, name: "Supervisor",  email: "supervisor@centurionfoods.com", password: "supervisor123", role: "supervisor" },
-  { id: 5, name: "Asistente",  email: "asistente@centurionfoods.com", password: "asistente123", role: "asistente" }
+  { id: 5, name: "Asistente",  email: "asistente@centurionfoods.com", password: "asistente123", role: "asistente" },
+  { id: 6, name: "Supervisor de planeación", email: "supervisorplaneacion@centurionfoods.com", password: "supervisorp123", role: "supervisorplaneacion"}
 ]   
 
 // ─── Service methods ──────────────────────────────────────────────────────────

@@ -47,9 +47,8 @@ export default function Layout() {
 
       <header className="relative flex items-end shrink-0 pl-6 px-16 bg-white">
         <TabsContainer>
-          <Tab to="/supervisor"                   label="Registros" />
-          <Tab to="/supervisor/gestion-productos" label="Códigos de producto" />
-          <Tab to="/supervisor/historicos"        label="Datos históricos" />
+          <Tab to="/supervisorplaneacion"             label="Informacion de producción" />
+          <Tab to="/supervisorplaneacion/paradas"     label="Registros de paradas" />
         </TabsContainer>
 
         <div className="absolute right-10 top-3 flex items-center gap-3 z-30">
@@ -68,7 +67,7 @@ export default function Layout() {
             </button>
 
             {isMenuOpen && (
-              <UserMenu handleLogout={handleLogout} rol={"Supervisor"} index={"SU"}/>
+              <UserMenu handleLogout={handleLogout} rol={"Supervisor Planeacion"} index={"SU"}/>
             )}
           </div>
         </div>

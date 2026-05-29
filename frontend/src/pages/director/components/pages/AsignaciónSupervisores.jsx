@@ -14,7 +14,7 @@ export default function AsignacionSupervisores() {
   }
 
   return (
-    <div className="w-full max-w-9xl -mt-3 mx-auto p-6 bg-gray-50/50 max-h-140">
+    <div className="w-full max-w-9xl -mt-3 mx-auto p-6 max-h-140">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {SUPERVISORES.map((s) => (
           <SupervisorCard

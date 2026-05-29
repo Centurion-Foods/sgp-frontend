@@ -1,10 +1,11 @@
 import { Outlet, useNavigate } from "react-router-dom"
 import { useState, useRef, useEffect } from "react"
 import { UserRound } from "lucide-react"
-import { useAuth } from "../../../auth/useAuth"
+import { useAuth } from "../../auth/useAuth"
 
-import TabsContainer from "../../../shared/ui/TabsContainer"
-import Tab from "../../../shared/ui/Tab"
+import TabsContainer from "../../shared/ui/TabsContainer"
+import Tab from "../../shared/ui/Tab"
+import UserMenu from "../../shared/ui/UserMenu"
 
 export default function AdminLayout() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -41,26 +42,19 @@ export default function AdminLayout() {
           <div className="relative" ref={menuRef}>
             <button
               onClick={() => setIsMenuOpen((v) => !v)}
-              className="flex items-center justify-center w-9 h-9 bg-gray-100 border border-gray-300 rounded-md text-red-800 hover:bg-gray-200 transition-colors focus:outline-none"
+              className={`flex items-center justify-center w-9 h-9 border rounded-md transition-colors focus:outline-none ${
+                isMenuOpen
+                  ? "bg-red-800 border-red-800 text-white hover:bg-red-900"
+                  : "bg-gray-100 border-gray-300 text-red-800 hover:bg-gray-200"
+              }`}
+              aria-haspopup="menu"
+              aria-expanded={isMenuOpen}
             >
-              <UserRound className="w-5 h-5" />
+              <UserRound className="w-5 h-5 stroke-[1.8]" />
             </button>
 
             {isMenuOpen && (
-              <div className="absolute right-0 mt-2 w-56 border border-gray-200 bg-white rounded-2xl shadow-lg py-2 z-50 text-gray-800">
-                <div className="px-4 pb-2 flex items-center gap-3">
-                  <div className="w-8 h-8 bg-slate-800 text-white rounded-full flex items-center justify-center font-semibold">AD</div>
-                  <div>
-                    <p className="text-sm font-semibold truncate">Administrador</p>
-                  </div>
-                </div>
-                <button
-                  onClick={handleLogout}
-                  className="w-full text-left px-4 pt-3 pb-1 text-sm text-gray-700 border-t border-gray-200 hover:text-red-700 transition-colors"
-                >
-                  Cerrar sesión
-                </button>
-              </div>
+              <UserMenu handleLogout={handleLogout} rol={"Administrador"} index={"AD"}/>
             )}
           </div>
         </div>

@@ -6,6 +6,7 @@ import MiniCalendar from "./MiniCalendar"
 
 import TabsContainer from "../../../shared/ui/TabsContainer"
 import Tab from "../../../shared/ui/Tab"
+import UserMenu from "../../../shared/ui/UserMenu"
 
 export default function Layout() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -74,7 +75,11 @@ export default function Layout() {
               <button
                 data-calendar-button
                 onClick={openDatePicker}
-                className="flex items-center justify-center w-9 h-9 bg-gray-100 border border-gray-300 rounded-md text-red-800 hover:bg-gray-200 transition-colors focus:outline-none"
+                className={`flex items-center justify-center w-9 h-9 border rounded-md transition-colors focus:outline-none ${
+                  showCalendar
+                    ? "bg-red-800 border-red-800 text-white hover:bg-red-900"
+                    : "bg-gray-100 border-gray-300 text-red-800 hover:bg-gray-200"
+                }`}
                 aria-label="Abrir calendario"
               >
                 <Calendar className="w-5 h-5 stroke-[1.8]" />
@@ -97,7 +102,11 @@ export default function Layout() {
           <div className="relative" ref={menuRef}>
             <button
               onClick={() => setIsMenuOpen((v) => !v)}
-              className="flex items-center justify-center w-9 h-9 bg-gray-100 border border-gray-300 rounded-md text-red-800 hover:bg-gray-200 transition-colors focus:outline-none"
+              className={`flex items-center justify-center w-9 h-9 border rounded-md transition-colors focus:outline-none ${
+                isMenuOpen
+                  ? "bg-red-800 border-red-800 text-white hover:bg-red-900"
+                  : "bg-gray-100 border-gray-300 text-red-800 hover:bg-gray-200"
+              }`}
               aria-haspopup="menu"
               aria-expanded={isMenuOpen}
             >
@@ -105,22 +114,7 @@ export default function Layout() {
             </button>
 
             {isMenuOpen && (
-              <div role="menu" className="absolute right-0 mt-2 w-56 border border-gray-200 bg-white rounded-2xl shadow-lg py-2 z-50">
-                <div className="px-4 pb-2 flex items-center gap-3">
-                  <div className="w-8 h-8 bg-amber-100 text-amber-700 rounded-full flex items-center justify-center font-semibold select-none">GE</div>
-                  <div className="flex-1">
-                    <p className="text-sm font-semibold text-gray-800 truncate">Gerente</p>
-                  </div>
-                </div>
-                <div className="mt-1">
-                  <button
-                    onClick={handleLogout}
-                    className="w-full text-left px-4 pt-3 pb-1 text-sm text-gray-700 border-t border-gray-200 hover:text-red-700/80 transition-colors duration-500"
-                  >
-                    Cerrar sesión
-                  </button>
-                </div>
-              </div>
+              <UserMenu handleLogout={handleLogout} rol={"Gerente"} index={"GE"}/>
             )}
           </div>
 

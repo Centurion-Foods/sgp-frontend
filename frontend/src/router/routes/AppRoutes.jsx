@@ -12,6 +12,7 @@ import gerenciaRoutes from "./gerencia.routes"
 import directorRoutes from "./director.routes"
 import supervisorRoutes from "./supervisor.routes"
 import asistenteRoutes from "./asistente.routes"
+import supervisorplaneacionRoutes from "./supervisorplaneacion.routes"
 
 export default function AppRoutes() {
   return useRoutes([
@@ -48,6 +49,11 @@ export default function AppRoutes() {
     {
       element: <PrivateRoute roles={["asistente"]} />,
       children: [asistenteRoutes],
+    },
+
+    {
+      element: <PrivateRoute roles={["supervisorplaneacion"]} />,
+      children: [supervisorplaneacionRoutes],
     },
 
     {
